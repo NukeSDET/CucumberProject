@@ -12,9 +12,6 @@ public class Driver {
 
     public static WebDriver getDriver(){
 
-        System.setProperty("webdriver.chrome.driver","/Users/nurlanm/Desktop/projects/SeleniumFirstProject/src/test/drivers/chromedriver");
-
-        System.setProperty("webdriver.firefox.driver","/Users/nurlanm/Desktop/projects/SeleniumFirstProject/src/test/drivers/geckodriver");
 
         if(driver != null){
             return driver;

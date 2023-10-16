@@ -2,6 +2,8 @@ package steps;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import org.openqa.selenium.WebDriver;
+import utilities.Driver;
 
 public class Hooks {
 @Before
@@ -10,6 +12,8 @@ public class Hooks {
 }
 @After
     public void afterScenario(){
-    System.out.println("My after method");
+
+    Driver.closeDriver();
+    System.out.println("closed window");
 }
 }

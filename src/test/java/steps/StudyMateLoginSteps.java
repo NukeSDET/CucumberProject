@@ -39,12 +39,24 @@ public class StudyMateLoginSteps {
         loginPage.loginButton.click();
         System.out.println("User clicked login button");
     }
+
     @Then("user should be logged in to the application")
-    public void user_should_be_logged_in_to_the_application() {
+    public void user_should_be_logged_in_to_the_application() throws InterruptedException {
        String expectUrl = "https://codewiser.studymate.us/admin/analytics";
+       Thread.sleep(4000);
        String currentUrl = driver.getCurrentUrl();
        Assert.assertEquals("user could not log in",expectUrl,currentUrl);
         System.out.println("user successfully logged in ");
+    }
+    @Then("user should see error message")
+    public void user_should_see_error_message() throws InterruptedException {
+
+        String expectLogError = "Email is not valid!";
+        Thread.sleep(2000);
+        String actualError = loginPage.passwordNotValidError.getText();
+        System.out.println("actual error text is " + actualError);
+        Assert.assertEquals("error message is not displayed", expectLogError,actualError);
+        System.out.println("Expected error displayed ");
     }
 
 }
